@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Adult students{% endblock %}
+
+{% block content %}
+    <h1>List of Adult students</h1>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Class details</th>
+            <th>Attendance</th>
+        </tr>
+        {% for adult_student in adult_students %}
+        <tr>
+            <td>{{ adult_student.first_name }}</td>
+            <td>{{ adult_student.last_name }}</td>
+            <td>{{ adult_student.age }}</td>
+            <td>{{ adult_student.class_details }}</td>
+            <td>{{ adult_student.attendance }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No Adult students found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

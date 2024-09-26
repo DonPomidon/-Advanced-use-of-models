@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Class details{% endblock %}
+
+{% block content %}
+    <h1>List of Class details</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teacher</th>
+        </tr>
+        {% for class_detail in class_details %}
+        <tr>
+            <td>{{ class_detail.name }}</td>
+            <td>{{ class_detail.teacher }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No Class details found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
